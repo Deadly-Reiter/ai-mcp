@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agent-orchestration-phase2-ap2"
+version = "0.1.1"
+description = "Phase 2 multi-agent orchestration with AP2-aware authorization"
+requires-python = ">=3.11"
+dependencies = [
+  "pydantic>=2.6",
+  "PyJWT>=2.8.0",
+  "pytest>=8.0",
+  "pytest-asyncio>=0.23.0"
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+pythonpath = ["src"]
